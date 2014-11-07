@@ -18,8 +18,7 @@ ActiveRecord::Schema.define(version: 20141107211340) do
 
   create_table "desks", force: true do |t|
     t.integer  "user_id"
-    t.string   "picture"
-    t.string   "dimension"
+    t.string   "type"
     t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
