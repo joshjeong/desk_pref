@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ChairTest < ActiveSupport::TestCase
+class DeskTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
