@@ -1,0 +1,79 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.desk-container {
+  margin: auto;
+  height: 30rem;
+  width: 90%;
+  position: relative; }
+  .desk-container #basic {
+    background-image: url("/assets/desk_placeholder.jpg");
+    left: 0; }
+  .desk-container #standing {
+    background-image: url("/assets/desk_placeholder.jpg");
+    left: 34%; }
+  .desk-container #mega {
+    background-image: url("/assets/desk_placeholder.jpg");
+    right: 0; }
+  .desk-container .desk-pic {
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: 34%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat; }
+  @media screen and (max-width: 1000px) {
+    .desk-container .desk-pic {
+      display: block;
+      width: 100%;
+      height: 33%;
+      position: relative; }
+    .desk-container #standing {
+      left: 0; } }
