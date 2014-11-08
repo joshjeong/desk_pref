@@ -30,4 +30,6 @@ config/secrets.yml
 *.bowerrc
 bower.json
 
+.sass-cache
+
 .env
