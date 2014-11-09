@@ -2,33 +2,82 @@ $break-small: 740px;
 $break-large: 1200px;
 $small-displays: "screen and (max-width: 1000px)";
 
+.dimOverlay{
+  visibility: hidden;
+  border: 1px solid red;
+  background-color: rgba(0,0,0,0.8);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+.description-container{
+  border: 1px solid red;
+  height: 30rem;
+  width: 40rem;
+  position: absolute;
+  margin-left: -20rem;
+  left: 50%;
+  z-index: 2;
+  img{
+
+  }
+}
 .desk-container{
   margin: auto;
   height: 30rem;
   width: 90%;
   position: relative;
   #basic{
-    background-image: url("/assets/desk_placeholder.jpg"); 
     left: 0;
+    background-image: url("/assets/basic.jpg");
   }
   #standing{
-    background-image: url("/assets/desk_placeholder.jpg"); 
     left:34%;
+    background-image: url("/assets/standing.jpg");
   }
   #mega{
-    background-image: url("/assets/desk_placeholder.jpg"); 
     right: 0;
+    background-image: url("/assets/mega.jpg");
   }
   .desk-pic{
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
     position: absolute;
     display: inline-block;
     height: 100%;
     width: 34%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
+    overflow: hidden;
+    li{
+      display: block;
+      position: relative;
+      // img{
+      //   background: url("assets/basic.jpg");
+      //   height:10rem;
+      //   width: 10rem;
+      // }
+    }
+    .overlay{
+      cursor: pointer;
+      top: 0;
+      position: absolute;
+      display: inline-block;
+      display: none;
+      background: rgba(0,0,0,0.7);
+      width: 100%;
+      height: 100%;
+      h1{
+        line-height: 30rem;
+        vertical-align: center;
+        color: white;
+        text-align: center;
+        font-size: 3rem;
+      }
+    }
   }
   @media #{$small-displays} {
     .desk-pic{
@@ -36,6 +85,10 @@ $small-displays: "screen and (max-width: 1000px)";
       width: 100%;
       height: 33%;
       position: relative;
+      img{
+        width:100%;
+        height: auto;
+      }
     }
     #standing{
       left: 0;
