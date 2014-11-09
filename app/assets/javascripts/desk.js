@@ -21,21 +21,22 @@ Desk.Controller.prototype = {
   },
 
   clickDesk: function(pic){
+    $('.description-text').html('')
     var deskType = pic.attr('id')
-    this.view.dim(pic)
+    this.clickOutsideListener();
+    this.view.showModal();
     $.ajax({
       url: 'dashboard/show',
       data: {desk: deskType}
     }).done(function(response){
       var desk = {
           style: response.style.toUpperCase(),
-          pic: response.style+".jpg",
           desc_arr: response.description.split(',')
       }
-      var template = "<img src= '/assets/{{pic}}'/><div id='desk-info'><h1>{{style}}</h1><ul>{{#desc_arr}}"+
-                      "<li>{{.}}</li>{{/desc_arr}}</ul></div>"
+      var template = "<h1>{{style}}</h1><ul>{{#desc_arr}}"+
+                      "<li>{{.}}</li>{{/desc_arr}}</ul>"
       var html = Mustache.to_html(template, desk)
-      $('body').append(html)
+      $('.description-text').html(html)
     })
   },
   hoverDeskListener: function(){
@@ -47,9 +48,16 @@ Desk.Controller.prototype = {
     $('.desk-pic').on('mouseleave', function(e){
       self.view.hideOverlay($(this))
     })
+  },
+  clickOutsideListener: function(){
+    var self = this
+    $('body').on('click', function(e){
+      if(e.target.className=="dimOverlay"){
+        self.view.closeModal();
+      }
+    })
   }
-
-};
+}
 
 Desk.View = function(){};
 
@@ -60,7 +68,12 @@ Desk.View.prototype = {
   hideOverlay: function(container){
     container.find('.overlay').fadeOut(200)
   },
-  dim: function(pic){
+  closeModal: function(){
+    $('.description-container').css('visibility', 'hidden')
+    $('.dimOverlay').css('visibility', 'hidden')
+  },
+  showModal: function(){
+    $('.description-container').css('visibility', 'visible')
     $('.dimOverlay').css('visibility', 'visible')
   }
 };

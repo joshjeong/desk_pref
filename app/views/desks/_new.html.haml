@@ -1,17 +1,18 @@
 %div.dimOverlay
 %h1 Choose your desk!!!!!!
 %div.description-container
-%ul.desk-container
-  %li#basic.desk-pic
-    / # = image_tag "basic.jpg"
-    %div.overlay 
-      %h1 Basic
-  %li#standing.desk-pic
-    / # = image_tag "standing.jpg"
-    %div.overlay 
-      %h1 Standing
-  %li#mega.desk-pic
-    / = image_tag "mega.jpg"
-    %div.overlay 
-      %h1 Mega
+  %form
+    %div.description-text
+    %button(id="select-btn") Select
+%div.desk-container
+  %ul
+    %li#basic.desk-pic
+      %div.overlay 
+        %h1 Basic
+    %li#standing.desk-pic
+      %div.overlay 
+        %h1 Standing
+    %li#mega.desk-pic
+      %div.overlay 
+        %h1 Mega
 
