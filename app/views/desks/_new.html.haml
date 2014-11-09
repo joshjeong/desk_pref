@@ -1,5 +1,17 @@
+%div.dimOverlay
 %h1 Choose your desk!!!!!!
-%div.desk-container
-  %div#basic.desk-pic
-  %div#standing.desk-pic
-  %div#mega.desk-pic
+%div.description-container
+%ul.desk-container
+  %li#basic.desk-pic
+    / # = image_tag "basic.jpg"
+    %div.overlay 
+      %h1 Basic
+  %li#standing.desk-pic
+    / # = image_tag "standing.jpg"
+    %div.overlay 
+      %h1 Standing
+  %li#mega.desk-pic
+    / = image_tag "mega.jpg"
+    %div.overlay 
+      %h1 Mega
+
