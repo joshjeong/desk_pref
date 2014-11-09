@@ -12,20 +12,34 @@ $small-displays: "screen and (max-width: 1000px)";
   z-index: 2;
 }
 .description-container{
-  border: 1px solid red;
-  height: 30rem;
-  width: 40rem;
-  position: absolute;
-  margin-left: -20rem;
-  left: 50%;
+  height: 10rem;
+  width: 40%;
+  position: relative;
+  top: 5rem;
+  margin:auto;
   z-index: 2;
-  img{
-
+  background-color: white;
+  visibility: hidden;
+  h1{
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 2rem;
+  }
+  ul{
+    text-align: center;
+  }
+  #select-btn{
+    position: absolute;
+    bottom: 1rem;
+    width: 10rem;
+    margin-left: -5rem;
+    left: 50%;
   }
 }
 .desk-container{
+  top: -8rem;
   margin: auto;
-  height: 30rem;
+  height: 24rem;
   width: 90%;
   position: relative;
   #basic{
@@ -33,7 +47,7 @@ $small-displays: "screen and (max-width: 1000px)";
     background-image: url("/assets/basic.jpg");
   }
   #standing{
-    left:34%;
+    left:33.5%;
     background-image: url("/assets/standing.jpg");
   }
   #mega{
@@ -41,7 +55,6 @@ $small-displays: "screen and (max-width: 1000px)";
     background-image: url("/assets/mega.jpg");
   }
   .desk-pic{
-
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
@@ -50,33 +63,29 @@ $small-displays: "screen and (max-width: 1000px)";
     position: absolute;
     display: inline-block;
     height: 100%;
-    width: 34%;
+    width: 33%;
     overflow: hidden;
-    li{
-      display: block;
-      position: relative;
-      // img{
-      //   background: url("assets/basic.jpg");
-      //   height:10rem;
-      //   width: 10rem;
-      // }
-    }
-    .overlay{
-      cursor: pointer;
-      top: 0;
-      position: absolute;
-      display: inline-block;
-      display: none;
-      background: rgba(0,0,0,0.7);
-      width: 100%;
-      height: 100%;
-      h1{
-        line-height: 30rem;
-        vertical-align: center;
-        color: white;
-        text-align: center;
-        font-size: 3rem;
-      }
+  }
+  li{
+    display: block;
+    position: absolute;
+    overflow: hidden;
+  }
+  .overlay{
+    cursor: pointer;
+    top: 0;
+    position: absolute;
+    display: inline-block;
+    display: none;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    h1{
+      line-height: 24rem;
+      vertical-align: center;
+      color: white;
+      text-align: center;
+      font-size: 3rem;
     }
   }
   @media #{$small-displays} {
