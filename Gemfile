@@ -34,6 +34,10 @@ gem 'haml'
 
 gem 'sass'
 
+gem 'mustache'
+
+gem 'pry'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
