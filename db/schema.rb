@@ -17,15 +17,16 @@ ActiveRecord::Schema.define(version: 20141107211340) do
   enable_extension "plpgsql"
 
   create_table "desks", force: true do |t|
-    t.integer  "user_id"
-    t.string   "type"
+    t.string   "style"
     t.integer  "price"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
     t.boolean  "admin"
+    t.string   "desk_type"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",                  default: "", null: false
