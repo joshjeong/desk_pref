@@ -10,24 +10,47 @@ Nav.Controller = function(view){
 Nav.Controller.prototype = {
   bindListeners: function(){
     this.signUpListener();
+    this.signInLinkListener();
   },
   signUpListener: function(){
     var self = this;
     $('#sign-up').on('click', function(e){
       e.preventDefault();
-      self.signUp($(this));
+      self.signUp();
     })
   },
-  signUp: function(link){
-    console.log('worked')
-    // $.ajax({
-    //   url: ,
-    //   type: ,
-    //   data:
-    // }).done(function(response){
-
-    // })
+  signInLinkListener: function(){
+    var self = this;
+    $('#signin-link').on('click', function(e){
+      e.preventDefault();
+      self.signInLink();
+    })
+  },
+  signUp: function(){
+    this.view.showSignUp();
+    this.view.hideSignIn();
+  },
+  signInLink: function(){
+    this.view.hideSignUp();
+    this.view.showSignIn();
   }
 };
 
 Nav.View = function(){};
+
+Nav.View.prototype = {
+  showSignUp: function(){
+    $('.signup-container').css('visibility', 'visible');
+  },
+  hideSignIn: function(){
+    $('.user-login').css('visibility', 'hidden');
+  },
+  hideSignUp: function(){
+    $('.signup-container').css('visibility', 'hidden');
+  },
+  showSignIn: function(){
+    $('.user-login').css('visibility', 'visible');
+  }
+
+}
+
