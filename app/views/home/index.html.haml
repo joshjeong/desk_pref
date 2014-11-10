@@ -1,2 +1,31 @@
+%div.navbar
+  %span#front-title.transition> Desk
+  %span#back-title.transition Space
+  %span.user-login.transition
+    - if user_signed_in?
+      Signed in as #{current_user.email}.
+      \#{link_to "Sign Out", destroy_user_session_path, :method => :delete}
+    - else
+      = form_tag session_path(:user) do
+        %table
+          %tbody
+            %tr
+              %td 
+                = text_field_tag 'user[email]', nil, placeholder: "Email..."
+              %td
+                = password_field_tag 'user[password]', nil, placeholder: "Password..."
+              %td
+                %button Sign in
+            %tr
+              %td
+                = check_box_tag 'user[remember_me]'
+                = label_tag 'user[remember_me]', 'Remember me'
+              %td
+                = link_to "Forgot your password?", new_password_path(:user)
+      %div#sign-up
+        New User?
+        = link_to"Sign Up Now", new_user_registration_path
+
+
 %div.background
 %div.background-overlay
