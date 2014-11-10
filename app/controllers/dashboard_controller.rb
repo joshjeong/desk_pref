@@ -16,11 +16,9 @@ class DashboardController < ApplicationController
   end
 
   def update
-    p current_user
     @desk = params[:desk]
     current_user.desk_type = @desk
     current_user.save
-    p '------------------'
     render :selected
   end
 
