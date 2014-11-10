@@ -19,7 +19,7 @@ class DashboardController < ApplicationController
     @desk = params[:desk]
     current_user.desk_type = @desk
     current_user.save
-    render :selected
+    render :selected, layout: false
   end
 
 
