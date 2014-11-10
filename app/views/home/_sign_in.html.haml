@@ -12,6 +12,6 @@
         %td
           = check_box_tag 'user[remember_me]'
           = label_tag 'user[remember_me]', 'Remember me'
-%div#sign-up
-  New User?
-  = link_to"Sign Up Now", new_user_registration_path
+        %td
+          New User?
+          = link_to"Sign Up Now", new_user_registration_path, id: 'sign-up'
