@@ -58,6 +58,8 @@ table {
   text-align: center;
   transition: font-size 0.5s;
   padding: 1rem 0 1rem 0; }
+  #choose-title #desk-pref {
+    color: #307932; }
 
 .dimOverlay {
   visibility: hidden;
@@ -243,9 +245,6 @@ table {
     position: absolute;
     top: 0.5rem;
     right: 1rem; }
-    .navbar .user-login #sign-up {
-      position: absolute;
-      left: 0.6rem; }
 
 .signup-container {
   position: absolute;
@@ -307,6 +306,4 @@ table {
         .navbar .user-login table td button {
           padding: 0.5rem;
           width: 100%;
-          cursor: pointer; }
-    .navbar .user-login #sign-up {
-      left: 1rem; } }
+          cursor: pointer; } }

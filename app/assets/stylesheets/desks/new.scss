@@ -10,6 +10,9 @@ $small-displays: "screen and (max-width: 600px)";
   text-align: center;
   transition: font-size 0.5s;
   padding: 1rem 0 1rem 0;
+  #desk-pref{
+    color:#307932;
+  }
 }
 .dimOverlay{
   visibility: hidden;

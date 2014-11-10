@@ -77,10 +77,6 @@ $small-displays: "screen and (max-width: 635px)";
     position: absolute;
     top: 0.5rem;
     right: 1rem;
-    #sign-up{
-      position: absolute;
-      left: 0.6rem;
-    }
   }
 }
 
@@ -157,9 +153,6 @@ $small-displays: "screen and (max-width: 635px)";
             cursor: pointer;
           }
         } 
-      }
-      #sign-up{
-        left:1rem;
       }
     }
   }  
