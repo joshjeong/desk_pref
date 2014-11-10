@@ -2,7 +2,6 @@
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
  */
-@import url("http://fonts.googleapis.com/css?family=Open+Sans");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -51,15 +50,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-body {
-  transition: all .2s linear;
-  -o-transition: all .2s linear;
-  -moz-transition: all .2s linear;
-  -webkit-transition: all .2s linear; }
-
 #choose-title {
+  font-family: 'Open Sans', sans-serif;
   top: 6rem;
-  position: absolute; }
+  font-size: 1.5rem;
+  position: relative;
+  text-align: center;
+  transition: font-size 0.5s;
+  padding: 1rem 0 1rem 0; }
 
 .dimOverlay {
   visibility: hidden;
@@ -74,7 +72,6 @@ body {
   height: 10rem;
   width: 18rem;
   position: relative;
-  top: 7rem;
   margin: auto;
   z-index: 2;
   background-color: white;
@@ -84,6 +81,8 @@ body {
   -webkit-box-shadow: 5px 5px 5px 0px black;
   -moz-box-shadow: 5px 5px 5px 0px black;
   box-shadow: 5px 5px 5px 0px black; }
+  .description-container .description-text {
+    padding-bottom: 3rem; }
   .description-container h1 {
     text-align: center;
     padding-top: 1rem;
@@ -135,8 +134,7 @@ body {
     position: absolute;
     height: 100%;
     width: 33%;
-    overflow: hidden;
-    transition: width 1s; }
+    overflow: hidden; }
     .desk-container .desk-pic .overlay {
       cursor: pointer;
       position: absolute;
@@ -154,21 +152,27 @@ body {
         font-size: 3rem; }
   .desk-container li {
     overflow: hidden; }
-  @media screen and (max-width: 600px) {
-    .desk-container .desk-pic {
-      -webkit-background-size: contain;
-      -moz-background-size: contain;
-      -o-background-size: contain;
-      background-size: contain;
-      position: relative;
-      height: 10rem;
-      width: 100%;
-      overflow: hidden; }
-      .desk-container .desk-pic .overlay h1 {
-        line-height: 10rem; }
-    .desk-container #standing {
-      left: 0; } }
 
+@media screen and (max-width: 600px) {
+  #choose-title {
+    font-size: 1rem; }
+
+  .desk-container .desk-pic {
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    position: relative;
+    height: 10rem;
+    width: 100%;
+    overflow: hidden; }
+    .desk-container .desk-pic .overlay h1 {
+      line-height: 10rem; }
+  .desk-container #standing {
+    left: 0; }
+
+  .description-container {
+    top: 3rem; } }
 .transition {
   -webkit-transition: all 1s ease-in-out;
   -moz-transition: all 1s ease-in-out;
@@ -233,14 +237,38 @@ body {
     background-color: white;
     -webkit-box-shadow: 2px 2px 2px 0px black;
     -moz-box-shadow: 2px 2px 2px 0px black;
-    box-shadow: 2px 2px 2px 0px black; }
+    box-shadow: 2px 2px 2px 0px black;
+    cursor: pointer; }
   .navbar .user-login {
     position: absolute;
     top: 0.5rem;
     right: 1rem; }
     .navbar .user-login #sign-up {
       position: absolute;
-      left: 0.8rem; }
+      left: 0.6rem; }
+
+.signup-container {
+  position: absolute;
+  background-color: #343434;
+  width: 17rem;
+  padding: 1rem;
+  left: -8.5rem;
+  margin-left: 50%;
+  margin-top: 10rem;
+  visibility: hidden;
+  border-radius: 5px; }
+  .signup-container h1 {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 1rem;
+    font-size: 1.5rem; }
+  .signup-container input {
+    position: relative;
+    width: 100%;
+    border: 1px solid lightgray;
+    padding: 0.4rem; }
+  .signup-container #signup-btn {
+    padding: 0.5rem 0; }
 
 @media screen and (max-width: 635px) {
   .navbar #front-title {
@@ -255,26 +283,30 @@ body {
   .navbar .user-login {
     border-radius: 5px;
     background-color: #343434;
-    height: 13rem;
     width: 14rem;
     margin-left: -7rem;
     left: 50%;
     top: 10rem;
-    padding-top: 1rem; }
+    padding: 1rem 1rem 1.5rem 1rem; }
     .navbar .user-login table {
-      margin: auto; }
+      margin: auto;
+      width: 100%;
+      border-collapse: collapse; }
       .navbar .user-login table #user_email {
-        width: 100%;
-        padding: 0.5rem 0 0.5rem 0.5rem; }
+        padding: 0.5rem;
+        border: 0 1px 1px 1px solid lightgray; }
       .navbar .user-login table #user_password {
-        width: 100%;
-        padding: 0.5rem 0 0.5rem 0.5rem; }
+        margin-top: 0;
+        height: 100%;
+        padding: 0.5rem;
+        border: 1px solid lightgray; }
       .navbar .user-login table td {
+        margin: 0;
         display: block;
         padding: 0; }
         .navbar .user-login table td button {
-          margin-top: 0.5rem;
-          padding: 0.5rem 0;
-          width: 100%; }
+          padding: 0.5rem;
+          width: 100%;
+          cursor: pointer; }
     .navbar .user-login #sign-up {
-      left: 2.7rem; } }
+      left: 1rem; } }

@@ -1,0 +1,166 @@
+$small-displays: "screen and (max-width: 635px)";
+.transition{
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.background{
+  background-image: url("http://www.building-blocks.com/wp-content/themes/bb-v4/images/bb-mosaic.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.background-overlay{
+  position: absolute;
+  background-color: rgba(221,238,246,0.2);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+.navbar{
+  position: fixed;
+  height: 5rem;
+  width: 100%;
+  font-size: 0.8rem;
+  background-color: #343434;
+  color: white;
+  z-index: 3;
+  position: absolute;
+  #front-title{
+    line-height: 5rem;
+    margin-left: 3rem;
+    font-size: 3rem;
+  }
+  #back-title{
+    font-size: 2rem;
+    color: #c0deed;
+  }
+  #sign-out{
+      position: absolute;
+      right: 1rem;
+      bottom: 0.1rem;
+    }
+  a {
+    text-decoration: none;
+    color: #c0deed;
+  }
+  td {
+    padding: 0px 9px;
+    #user_email{
+      width: 100%;
+    }
+    #user_password{
+      width: 100%;
+    }
+    input{
+      margin-top: 0.5rem;
+      padding: 0.2rem;
+      border: none;
+    }
+  }
+  button {
+    border: none;
+    width: 5rem;
+    padding: 3px 0;
+    background-color: white;-webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,1);
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,1);
+    cursor: pointer;
+  }
+  .user-login{
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    #sign-up{
+      position: absolute;
+      left: 0.6rem;
+    }
+  }
+}
+
+.signup-container{
+  position: absolute;
+  background-color: #343434;
+  width: 17rem;
+  padding: 1rem;
+  left: -8.5rem;
+  margin-left: 50%;
+  margin-top: 10rem;
+  visibility: hidden;
+  border-radius: 5px;
+  h1{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  input{
+    position:relative;
+    width: 100%;
+    border: 1px solid lightgray;
+    padding: 0.4rem;
+  }
+  #signup-btn{
+    padding: 0.5rem 0;
+  }
+}
+
+@media #{$small-displays} {
+  .navbar{
+    #front-title{
+      margin-left: 50%;
+      position: absolute;
+      left: -5.5rem;
+    }
+    #back-title{
+      margin-left: 50%;
+      left: 0.8rem;
+      top: 1.9rem;
+      position: absolute; 
+    }
+    .user-login{
+      border-radius: 5px;
+      background-color: #343434;
+      // height: 13rem;
+      width: 14rem;
+      margin-left: -7rem;
+      left: 50%;
+      top: 10rem;
+      padding: 1rem 1rem 1.5rem 1rem;      
+      table{
+        margin: auto;
+        width: 100%;
+        border-collapse: collapse;
+        #user_email{
+          padding: 0.5rem;
+          border: 0 1px 1px 1px solid lightgray;
+        }
+        #user_password{
+          margin-top: 0;
+          height: 100%;
+          padding: 0.5rem;
+          border: 1px solid lightgray;
+        }
+        td{
+          margin: 0;
+          display: block;
+          padding: 0;
+          button{
+            padding: 0.5rem;
+            width: 100%;
+            cursor: pointer;
+          }
+        } 
+      }
+      #sign-up{
+        left:1rem;
+      }
+    }
+  }  
+}
