@@ -91,9 +91,10 @@ Desk.Controller.prototype = {
       url: 'dashboard/update',
       type: 'PUT',
       data: {desk: deskType}
-    }).done(function(){
+    }).done(function(response){
       var new_pref = this.data.split('=')[1]
-      self.view.changePrefTitle(new_pref);
+      self.view.changePrefTitle(response);
+
     })
   }
 }
@@ -116,6 +117,7 @@ Desk.View.prototype = {
     $('.dimOverlay').css('visibility', 'visible')
   },
   changePrefTitle: function(pref){
-    $('#desk-pref').html(pref)
+    // $('#desk-pref').html(pref)
+    $('#choose-title').html(pref)
   }
 };
