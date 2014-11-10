@@ -1,1 +1,5 @@
-%h1 You have chosen "#{@desk}"
+- if @desk
+  Your current preference is: 
+  %span#desk-pref 
+    #{@desk}
+  %br To change, please select another desk style.
