@@ -65,6 +65,7 @@ Desk.Controller.prototype = {
     $('#select-btn').on('click', function(e){
       e.preventDefault();
       self.updateUserPref($(this));
+      self.view.closeModal();
     })
   },
   cancelDeskListener: function(){
@@ -75,12 +76,15 @@ Desk.Controller.prototype = {
     })
   },
   updateUserPref: function(button){
-    var deskType = button.parent().find('h1').html()
+    var deskType = button.parent().find('h1').html(),
+        self = this
     $.ajax({
       url: 'dashboard/update',
       type: 'PUT',
       data: {desk: deskType}
     }).done(function(){
+      var new_pref = this.data.split('=')[1]
+      self.view.changePrefTitle(new_pref);
     })
   }
 }
@@ -101,5 +105,8 @@ Desk.View.prototype = {
   showModal: function(){
     $('.description-container').css('visibility', 'visible')
     $('.dimOverlay').css('visibility', 'visible')
+  },
+  changePrefTitle: function(pref){
+    $('#desk-pref').html(pref)
   }
 };
