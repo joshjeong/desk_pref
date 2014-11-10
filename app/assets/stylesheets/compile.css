@@ -57,6 +57,10 @@ body {
   -moz-transition: all .2s linear;
   -webkit-transition: all .2s linear; }
 
+#choose-title {
+  top: 6rem;
+  position: absolute; }
+
 .dimOverlay {
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.8);
@@ -83,7 +87,8 @@ body {
   .description-container h1 {
     text-align: center;
     padding-top: 1rem;
-    font-size: 2rem; }
+    font-size: 2rem;
+    text-shadow: 1px 1px 1px #969696; }
   .description-container ul {
     padding-top: 5px;
     text-align: left;
