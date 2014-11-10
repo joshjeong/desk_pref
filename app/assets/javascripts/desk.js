@@ -12,6 +12,7 @@ Desk.Controller.prototype = {
   bindListeners: function(){
     this.clickDeskListener();
     this.hoverDeskListener();
+    this.escKeyListener();
   },
   clickDeskListener: function(){
     var self = this;
@@ -56,6 +57,14 @@ Desk.Controller.prototype = {
     var self = this;
     $('body').on('click', function(e){
       if(e.target.className=="dimOverlay"){
+        self.view.closeModal();
+      }
+    })
+  },
+  escKeyListener: function(){
+    var self = this;
+    $('body').keyup(function(e){
+      if(e.keyCode==27){
         self.view.closeModal();
       }
     })
