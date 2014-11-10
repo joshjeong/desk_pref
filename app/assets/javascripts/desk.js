@@ -21,8 +21,9 @@ Desk.Controller.prototype = {
   },
 
   clickDesk: function(pic){
+    var deskType = pic.attr('id'),
+        self = this;
     $('.description-text').html('')
-    var deskType = pic.attr('id')
     this.clickOutsideListener();
     this.view.showModal();
     $.ajax({
@@ -37,6 +38,7 @@ Desk.Controller.prototype = {
                       "<li>{{.}}</li>{{/desc_arr}}</ul>"
       var html = Mustache.to_html(template, desk)
       $('.description-text').html(html)
+      self.selectDeskListener();
     })
   },
   hoverDeskListener: function(){
@@ -50,11 +52,27 @@ Desk.Controller.prototype = {
     })
   },
   clickOutsideListener: function(){
-    var self = this
+    var self = this;
     $('body').on('click', function(e){
       if(e.target.className=="dimOverlay"){
         self.view.closeModal();
       }
+    })
+  },
+  selectDeskListener: function(){
+    var self = this;
+    $('#select-btn').on('click', function(e){
+      e.preventDefault();
+      self.updateUserPref($(this));
+    })
+  },
+  updateUserPref: function(button){
+    var deskType = button.parent().find('h1').html()
+    $.ajax({
+      url: 'dashboard/update',
+      type: 'PUT',
+      data: {desk: deskType}
+    }).done(function(){
     })
   }
 }
