@@ -1,7 +1,9 @@
 %div.dimOverlay
 %h1#choose-title 
   - if @desk
-    Your current preference is: #{@desk}
+    Your current preference is: 
+    %span#desk-pref 
+      #{@desk}
     %br To change, please select another desk style.
   - else 
     Select your desk preference:
