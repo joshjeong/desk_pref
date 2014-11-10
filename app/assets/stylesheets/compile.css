@@ -307,3 +307,55 @@ table {
           padding: 0.5rem;
           width: 100%;
           cursor: pointer; } }
+@media only screen and (max-device-width: 635px) {
+  .navbar {
+    padding: 5rem; }
+    .navbar #front-title {
+      margin-left: 50%;
+      position: absolute;
+      left: -14rem;
+      font-size: 7rem;
+      top: 2rem; }
+    .navbar #back-title {
+      margin-left: 50%;
+      left: 0.8rem;
+      top: 3rem;
+      position: absolute;
+      font-size: 5rem; }
+    .navbar .user-login {
+      border-radius: 5px;
+      background-color: #343434;
+      width: 50rem;
+      margin-left: -25rem;
+      left: 50%;
+      top: 15rem;
+      padding: 4rem 4rem 4.5rem 4rem;
+      font-size: 3rem; }
+      .navbar .user-login table {
+        margin: auto;
+        width: 100%;
+        border-collapse: collapse; }
+        .navbar .user-login table input {
+          padding: 3rem 1rem; }
+        .navbar .user-login table #user_email {
+          border: 0 1px 1px 1px solid lightgray; }
+        .navbar .user-login table #user_password {
+          margin-top: 0;
+          height: 100%;
+          border: 1px solid lightgray; }
+        .navbar .user-login table input[type=checkbox] {
+          -ms-transform: scale(2);
+          -moz-transform: scale(2);
+          -webkit-transform: scale(2);
+          -o-transform: scale(2); }
+        .navbar .user-login table td {
+          margin: 0;
+          display: block;
+          padding: 0; }
+          .navbar .user-login table td #user_remember_me {
+            margin: 1rem; }
+          .navbar .user-login table td button {
+            font-size: 3rem;
+            padding: 3rem;
+            width: 100%;
+            cursor: pointer; } }
