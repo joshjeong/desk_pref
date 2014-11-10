@@ -39,6 +39,7 @@ Desk.Controller.prototype = {
       var html = Mustache.to_html(template, desk)
       $('.description-text').html(html)
       self.selectDeskListener();
+      self.cancelDeskListener();
     })
   },
   hoverDeskListener: function(){
@@ -64,6 +65,13 @@ Desk.Controller.prototype = {
     $('#select-btn').on('click', function(e){
       e.preventDefault();
       self.updateUserPref($(this));
+    })
+  },
+  cancelDeskListener: function(){
+    var self = this;
+    $('#cancel-btn').on('click', function(e){
+      e.preventDefault();
+      self.view.closeModal();
     })
   },
   updateUserPref: function(button){
