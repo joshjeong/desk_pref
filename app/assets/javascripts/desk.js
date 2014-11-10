@@ -35,7 +35,7 @@ Desk.Controller.prototype = {
           desc_arr: response.description.split(',')
       }
       var template = "<h1>{{style}}</h1><ul>{{#desc_arr}}"+
-                      "<li>{{.}}</li>{{/desc_arr}}</ul>"
+                      "<li>- {{.}}</li>{{/desc_arr}}</ul>"
       var html = Mustache.to_html(template, desk)
       $('.description-text').html(html)
       self.selectDeskListener();
