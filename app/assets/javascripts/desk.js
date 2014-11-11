@@ -21,9 +21,11 @@ Desk.Controller.prototype = {
     })
   },
 
-  clickDesk: function(pic){
-    var deskType = pic.attr('id'),
-        self = this;
+  clickDesk: function(container){
+    
+    var deskType = container.attr('id'),
+        self = this,
+        pic = container.css('background-image').replace('http://localhost:3000','')
     $('.description-text').html('')
     this.clickOutsideListener();
     this.view.showModal();
@@ -38,6 +40,7 @@ Desk.Controller.prototype = {
       var template = "<h1>{{style}}</h1><ul>{{#desc_arr}}"+
                       "<li>- {{.}}</li>{{/desc_arr}}</ul>"
       var html = Mustache.to_html(template, desk)
+      self.view.loadImage(pic);
       $('.description-text').html(html)
       self.selectDeskListener();
       self.cancelDeskListener();
@@ -111,6 +114,7 @@ Desk.View.prototype = {
   closeModal: function(){
     $('.description-container').css('visibility', 'hidden')
     $('.dimOverlay').css('visibility', 'hidden')
+    $('.modal-pic').css('background-image', 'none')
   },
   showModal: function(){
     $('.description-container').css('visibility', 'visible')
@@ -119,5 +123,8 @@ Desk.View.prototype = {
   changePrefTitle: function(pref){
     // $('#desk-pref').html(pref)
     $('#choose-title').html(pref)
+  },
+  loadImage: function(pic){
+    $('.modal-pic').css('background-image', pic)
   }
 };

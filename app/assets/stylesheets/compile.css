@@ -107,7 +107,8 @@ table {
     .description-container .modal-container h1 {
       font-size: 3rem;
       padding: 1rem;
-      color: #0084b4; }
+      color: #0084b4;
+      text-align: center; }
     .description-container .modal-container ul {
       padding: 0 1rem; }
       .description-container .modal-container ul li {
