@@ -78,9 +78,9 @@ table {
   visibility: hidden;
   position: absolute;
   left: 0;
-  width: 40rem;
+  width: 38rem;
   height: 30rem;
-  left: -20rem;
+  left: -19rem;
   margin-left: 50%;
   background-color: white; }
   .description-container .modal-container {
