@@ -1,5 +1,3 @@
-$break-small: 740px;
-$break-large: 1200px;
 $small-displays: "screen and (max-width: 600px)";
 
 #choose-title{
@@ -11,9 +9,14 @@ $small-displays: "screen and (max-width: 600px)";
   transition: font-size 0.5s;
   padding: 1rem 0 1rem 0;
   #desk-pref{
-    color:#307932;
+    color:#0084b4;
   }
 }
+
+#sign-out{
+  font-size: 2rem;
+}
+
 .dimOverlay{
   visibility: hidden;
   background-color: rgba(0,0,0,0.8);
@@ -43,6 +46,7 @@ $small-displays: "screen and (max-width: 600px)";
     padding-top: 1rem;
     font-size: 2rem;
     text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+    color: #0084b4;
   }
   ul{
     padding-top: 5px;

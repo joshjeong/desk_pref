@@ -59,7 +59,10 @@ table {
   transition: font-size 0.5s;
   padding: 1rem 0 1rem 0; }
   #choose-title #desk-pref {
-    color: #307932; }
+    color: #0084b4; }
+
+#sign-out {
+  font-size: 2rem; }
 
 .dimOverlay {
   visibility: hidden;
@@ -89,7 +92,8 @@ table {
     text-align: center;
     padding-top: 1rem;
     font-size: 2rem;
-    text-shadow: 1px 1px 1px #969696; }
+    text-shadow: 1px 1px 1px #969696;
+    color: #0084b4; }
   .description-container ul {
     padding-top: 5px;
     text-align: left;
