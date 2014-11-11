@@ -8,10 +8,13 @@
   - else 
     Select your desk preference:
 %div.description-container
-  %form
-    %div.description-text
-    %button(id="select-btn") Select
-    %button(id='cancel-btn') Cancel
+  %div.modal-container
+    %div.modal-pic.modal
+    %div.modal-content.modal
+      %form
+        %div.description-text
+        %button(id="select-btn") Select
+        %button(id='cancel-btn') Cancel
 %div.desk-container
   %ul
     %li#basic.desk-pic
@@ -23,4 +26,3 @@
     %li#mega.desk-pic
       %div.overlay 
         %h1 Mega
-

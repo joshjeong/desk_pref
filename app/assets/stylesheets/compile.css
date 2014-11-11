@@ -74,48 +74,64 @@ table {
 
 .description-container {
   font-family: 'Open Sans', sans-serif;
-  height: 10rem;
-  width: 18rem;
-  position: relative;
-  margin: auto;
   z-index: 2;
-  background-color: white;
   visibility: hidden;
-  border-radius: 5px;
-  background-color: white;
-  -webkit-box-shadow: 5px 5px 5px 0px black;
-  -moz-box-shadow: 5px 5px 5px 0px black;
-  box-shadow: 5px 5px 5px 0px black; }
-  .description-container .description-text {
-    padding-bottom: 3rem; }
-  .description-container h1 {
-    text-align: center;
-    padding-top: 1rem;
-    font-size: 2rem;
-    text-shadow: 1px 1px 1px #969696;
-    color: #0084b4; }
-  .description-container ul {
-    padding-top: 5px;
-    text-align: left;
-    width: 14rem;
-    margin: auto; }
-  .description-container button {
-    position: absolute;
-    bottom: 1rem;
-    width: 5rem;
-    color: white;
-    border: none;
-    background-color: #0084b4;
-    -webkit-box-shadow: 2px 2px 2px 0px #4a6978;
-    -moz-box-shadow: 2px 2px 2px 0px #4a6978;
-    box-shadow: 2px 2px 2px 0px #4a6978; }
-  .description-container #select-btn {
-    left: 15%; }
-  .description-container #cancel-btn {
-    right: 15%; }
+  position: absolute;
+  left: 0;
+  width: 40rem;
+  height: 30rem;
+  left: -20rem;
+  margin-left: 50%;
+  background-color: white; }
+  .description-container .modal-container {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+    .description-container .modal-container .modal {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      display: inline-block; }
+    .description-container .modal-container .modal-pic {
+      left: 0;
+      background-image: url("/assets/basic.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center; }
+    .description-container .modal-container .modal-content {
+      right: 0; }
+    .description-container .modal-container .description-text {
+      position: absolute;
+      top: 3rem;
+      padding-bottom: 3rem; }
+    .description-container .modal-container h1 {
+      font-size: 3rem;
+      padding: 1rem;
+      color: #0084b4; }
+    .description-container .modal-container ul {
+      padding: 0 1rem; }
+      .description-container .modal-container ul li {
+        padding: 0.2rem 0; }
+    .description-container .modal-container button {
+      background-color: #0084b4;
+      color: white;
+      border: none;
+      position: absolute;
+      bottom: 11rem;
+      width: 6rem;
+      height: 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      -webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75);
+      -moz-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75);
+      box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75); }
+    .description-container .modal-container #select-btn {
+      left: 12%; }
+    .description-container .modal-container #cancel-btn {
+      right: 12%; }
 
 .desk-container {
-  top: -4rem;
+  top: 6rem;
   margin: auto;
   height: 24rem;
   width: 90%;
