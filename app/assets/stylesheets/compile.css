@@ -62,7 +62,7 @@ table {
     color: #0084b4; }
 
 #sign-out {
-  font-size: 2rem; }
+  font-size: 1rem; }
 
 .dimOverlay {
   visibility: hidden;
@@ -314,6 +314,8 @@ table {
 @media only screen and (max-device-width: 635px) {
   .navbar {
     padding: 5rem; }
+    .navbar #sign-out {
+      font-size: 2rem; }
     .navbar #front-title {
       margin-left: 50%;
       position: absolute;
@@ -334,13 +336,14 @@ table {
       left: 50%;
       top: 15rem;
       padding: 4rem 4rem 4.5rem 4rem;
-      font-size: 3rem; }
+      font-size: 3rem;
+      border-radius: 20px; }
       .navbar .user-login table {
         margin: auto;
         width: 100%;
         border-collapse: collapse; }
         .navbar .user-login table input {
-          padding: 3rem 1rem; }
+          padding: 2rem 1rem; }
         .navbar .user-login table #user_email {
           border: 0 1px 1px 1px solid lightgray; }
         .navbar .user-login table #user_password {
@@ -360,6 +363,24 @@ table {
             margin: 1rem; }
           .navbar .user-login table td button {
             font-size: 3rem;
-            padding: 3rem;
+            padding: 2rem;
             width: 100%;
-            cursor: pointer; } }
+            cursor: pointer; }
+    .navbar .signup-container {
+      width: 50rem;
+      padding: 4rem 4rem;
+      left: -25rem;
+      margin-left: 50%;
+      margin-top: 10rem;
+      visibility: hidden;
+      border-radius: 20px;
+      font-size: 3rem; }
+      .navbar .signup-container h1 {
+        padding-bottom: 2rem;
+        font-size: 3rem; }
+      .navbar .signup-container input {
+        font-size: 2rem;
+        width: 100%;
+        padding: 2rem; }
+      .navbar .signup-container #signup-btn {
+        padding: 2rem 0; } }

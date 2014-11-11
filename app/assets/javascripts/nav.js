@@ -27,8 +27,8 @@ Nav.Controller.prototype = {
     })
   },
   signUp: function(){
-    this.view.showSignUp();
     this.view.hideSignIn();
+    this.view.showSignUp();
   },
   signInLink: function(){
     this.view.hideSignUp();
