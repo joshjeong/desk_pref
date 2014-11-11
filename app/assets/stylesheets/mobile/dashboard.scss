@@ -6,6 +6,7 @@ $iphone: "only screen and (max-device-width: 635px)";
     top: 12rem;
   }
   .desk-container{
+    top: 13rem;
     .desk-pic{
       -webkit-background-size: contain;
       -moz-background-size: contain;
@@ -26,30 +27,42 @@ $iphone: "only screen and (max-device-width: 635px)";
     }
   }
   .description-container{
-    height: 20rem;
-    width: 30rem;
+    height: 25rem;
+    width: 50rem;
     top: 15rem;
-    padding: 2rem;
-    .description-text{
-      font-size: 2rem;
-      padding: 0;
-    }
-    h1{
-      font-size: 3rem;
-      color: #0084b4;
-    }
-    ul{
-      width: 25rem;
-    }
-    button{
-      height: 3rem;
-      font-size: 2rem;
-      width: 9rem;
-    }
-    #select-btn{
-    }
-    #cancel-btn{
+    padding: 1rem;
+    left: -25rem;
+    margin-left: 50%;
+    .modal-container{
+      .modal-pic{
+        width: 35%
+      }
+      .modal-content{
+        width: 65%;
+        .description-text{
+          font-size: 2rem;
+          padding: 0;
+        }
+        h1{
+          padding: 0 0 1rem 0;
+          font-size: 3rem;
+          color: #0084b4;
+        }
+        ul{
+          width: 25rem;
+        }
+        button{
+          height: 3rem;
+          font-size: 2rem;
+          width: 9rem;
+          bottom: 1rem;
+        }
+        #select-btn{
+        }
+        #cancel-btn{
 
+        }
+      }
     }
   }
 }
