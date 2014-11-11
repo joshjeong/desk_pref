@@ -12,6 +12,7 @@ Desk.Controller.prototype = {
   bindListeners: function(){
     this.clickDeskListener();
     this.hoverDeskListener();
+    this.escKeyListener();
   },
   clickDeskListener: function(){
     var self = this;
@@ -35,10 +36,11 @@ Desk.Controller.prototype = {
           desc_arr: response.description.split(',')
       }
       var template = "<h1>{{style}}</h1><ul>{{#desc_arr}}"+
-                      "<li>{{.}}</li>{{/desc_arr}}</ul>"
+                      "<li>- {{.}}</li>{{/desc_arr}}</ul>"
       var html = Mustache.to_html(template, desk)
       $('.description-text').html(html)
       self.selectDeskListener();
+      self.cancelDeskListener();
     })
   },
   hoverDeskListener: function(){
@@ -59,20 +61,40 @@ Desk.Controller.prototype = {
       }
     })
   },
+  escKeyListener: function(){
+    var self = this;
+    $('body').keyup(function(e){
+      if(e.keyCode==27){
+        self.view.closeModal();
+      }
+    })
+  },
   selectDeskListener: function(){
     var self = this;
     $('#select-btn').on('click', function(e){
       e.preventDefault();
       self.updateUserPref($(this));
+      self.view.closeModal();
+    })
+  },
+  cancelDeskListener: function(){
+    var self = this;
+    $('#cancel-btn').on('click', function(e){
+      e.preventDefault();
+      self.view.closeModal();
     })
   },
   updateUserPref: function(button){
-    var deskType = button.parent().find('h1').html()
+    var deskType = button.parent().find('h1').html(),
+        self = this
     $.ajax({
       url: 'dashboard/update',
       type: 'PUT',
       data: {desk: deskType}
-    }).done(function(){
+    }).done(function(response){
+      var new_pref = this.data.split('=')[1]
+      self.view.changePrefTitle(response);
+
     })
   }
 }
@@ -93,5 +115,9 @@ Desk.View.prototype = {
   showModal: function(){
     $('.description-container').css('visibility', 'visible')
     $('.dimOverlay').css('visibility', 'visible')
+  },
+  changePrefTitle: function(pref){
+    // $('#desk-pref').html(pref)
+    $('#choose-title').html(pref)
   }
 };

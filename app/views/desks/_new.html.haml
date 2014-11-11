@@ -1,9 +1,17 @@
 %div.dimOverlay
-%h1 Choose your desk!!!!!!
+%h1#choose-title 
+  - if @desk
+    Your current preference is: 
+    %span#desk-pref 
+      #{@desk}
+    %br To change, please select another desk style.
+  - else 
+    Select your desk preference:
 %div.description-container
   %form
     %div.description-text
     %button(id="select-btn") Select
+    %button(id='cancel-btn') Cancel
 %div.desk-container
   %ul
     %li#basic.desk-pic

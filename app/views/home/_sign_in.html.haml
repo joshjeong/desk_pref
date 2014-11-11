@@ -1,0 +1,17 @@
+= form_tag session_path(:user) do
+  %table
+    %tbody
+      %tr
+        %td 
+          = text_field_tag 'user[email]', nil, placeholder: "Email...", required: true
+        %td
+          = password_field_tag 'user[password]', nil, placeholder: "Password...", required: true
+        %td
+          %button Sign in
+      %tr
+        %td
+          = check_box_tag 'user[remember_me]'
+          = label_tag 'user[remember_me]', 'Remember me'
+        %td
+          New User?
+          = link_to"Sign Up Now", new_user_registration_path, id: 'sign-up'

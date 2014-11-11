@@ -5,7 +5,7 @@
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
+del, dfn, em, img, ins, input, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
@@ -20,7 +20,12 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -45,9 +50,22 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+#choose-title {
+  font-family: 'Open Sans', sans-serif;
+  top: 6rem;
+  font-size: 1.5rem;
+  position: relative;
+  text-align: center;
+  transition: font-size 0.5s;
+  padding: 1rem 0 1rem 0; }
+  #choose-title #desk-pref {
+    color: #0084b4; }
+
+#sign-out {
+  font-size: 1rem; }
+
 .dimOverlay {
   visibility: hidden;
-  border: 1px solid red;
   background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
   height: 100%;
@@ -55,32 +73,53 @@ table {
   z-index: 2; }
 
 .description-container {
+  font-family: 'Open Sans', sans-serif;
   height: 10rem;
-  width: 40%;
+  width: 18rem;
   position: relative;
-  top: 5rem;
   margin: auto;
   z-index: 2;
   background-color: white;
-  visibility: hidden; }
+  visibility: hidden;
+  border-radius: 5px;
+  background-color: white;
+  -webkit-box-shadow: 5px 5px 5px 0px black;
+  -moz-box-shadow: 5px 5px 5px 0px black;
+  box-shadow: 5px 5px 5px 0px black; }
+  .description-container .description-text {
+    padding-bottom: 3rem; }
   .description-container h1 {
     text-align: center;
     padding-top: 1rem;
-    font-size: 2rem; }
+    font-size: 2rem;
+    text-shadow: 1px 1px 1px #969696;
+    color: #0084b4; }
   .description-container ul {
-    text-align: center; }
-  .description-container #select-btn {
+    padding-top: 5px;
+    text-align: left;
+    width: 14rem;
+    margin: auto; }
+  .description-container button {
     position: absolute;
     bottom: 1rem;
-    width: 10rem;
-    margin-left: -5rem;
-    left: 50%; }
+    width: 5rem;
+    color: white;
+    border: none;
+    background-color: #0084b4;
+    -webkit-box-shadow: 2px 2px 2px 0px #4a6978;
+    -moz-box-shadow: 2px 2px 2px 0px #4a6978;
+    box-shadow: 2px 2px 2px 0px #4a6978; }
+  .description-container #select-btn {
+    left: 15%; }
+  .description-container #cancel-btn {
+    right: 15%; }
 
 .desk-container {
-  top: -8rem;
+  top: -4rem;
   margin: auto;
   height: 24rem;
   width: 90%;
+  max-width: 70rem;
   position: relative; }
   .desk-container #basic {
     left: 0;
@@ -92,46 +131,60 @@ table {
     right: 0;
     background-image: url("/assets/mega.jpg"); }
   .desk-container .desk-pic {
+    background-position: center;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
     background-size: 100%;
     background-repeat: no-repeat;
     position: absolute;
-    display: inline-block;
     height: 100%;
     width: 33%;
     overflow: hidden; }
-  .desk-container li {
-    display: block;
-    position: absolute;
-    overflow: hidden; }
-  .desk-container .overlay {
-    cursor: pointer;
-    top: 0;
-    position: absolute;
-    display: inline-block;
-    display: none;
-    background: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    height: 100%; }
-    .desk-container .overlay h1 {
-      line-height: 24rem;
-      vertical-align: center;
-      color: white;
-      text-align: center;
-      font-size: 3rem; }
-  @media screen and (max-width: 1000px) {
-    .desk-container .desk-pic {
-      display: block;
+    .desk-container .desk-pic .overlay {
+      cursor: pointer;
+      position: absolute;
+      display: inline-block;
+      display: none;
+      background: rgba(0, 0, 0, 0.8);
       width: 100%;
-      height: 33%;
-      position: relative; }
-      .desk-container .desk-pic img {
-        width: 100%;
-        height: auto; }
-    .desk-container #standing {
-      left: 0; } }
+      height: 100%; }
+      .desk-container .desk-pic .overlay h1 {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 24rem;
+        vertical-align: center;
+        color: white;
+        text-align: center;
+        font-size: 3rem; }
+  .desk-container li {
+    overflow: hidden; }
+
+@media screen and (max-width: 600px) {
+  #choose-title {
+    font-size: 1rem; }
+
+  .desk-container .desk-pic {
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    position: relative;
+    height: 10rem;
+    width: 100%;
+    overflow: hidden; }
+    .desk-container .desk-pic .overlay h1 {
+      line-height: 10rem; }
+  .desk-container #standing {
+    left: 0; }
+
+  .description-container {
+    top: 3rem; } }
+.transition {
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out; }
 
 .background {
   background-image: url("http://www.building-blocks.com/wp-content/themes/bb-v4/images/bb-mosaic.svg");
@@ -161,11 +214,15 @@ table {
   position: absolute; }
   .navbar #front-title {
     line-height: 5rem;
-    margin-left: 1rem;
+    margin-left: 3rem;
     font-size: 3rem; }
   .navbar #back-title {
     font-size: 2rem;
     color: #c0deed; }
+  .navbar #sign-out {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.1rem; }
   .navbar a {
     text-decoration: none;
     color: #c0deed; }
@@ -183,8 +240,147 @@ table {
     border: none;
     width: 5rem;
     padding: 3px 0;
-    background-color: white; }
+    background-color: white;
+    -webkit-box-shadow: 2px 2px 2px 0px black;
+    -moz-box-shadow: 2px 2px 2px 0px black;
+    box-shadow: 2px 2px 2px 0px black;
+    cursor: pointer; }
   .navbar .user-login {
     position: absolute;
     top: 0.5rem;
     right: 1rem; }
+
+.signup-container {
+  position: absolute;
+  background-color: #343434;
+  width: 17rem;
+  padding: 1rem;
+  left: -8.5rem;
+  margin-left: 50%;
+  margin-top: 10rem;
+  visibility: hidden;
+  border-radius: 5px; }
+  .signup-container h1 {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 1rem;
+    font-size: 1.5rem; }
+  .signup-container input {
+    position: relative;
+    width: 100%;
+    border: 1px solid lightgray;
+    padding: 0.4rem; }
+  .signup-container #signup-btn {
+    padding: 0.5rem 0; }
+
+@media screen and (max-width: 635px) {
+  .navbar #front-title {
+    margin-left: 50%;
+    position: absolute;
+    left: -5.5rem; }
+  .navbar #back-title {
+    margin-left: 50%;
+    left: 0.8rem;
+    top: 1.9rem;
+    position: absolute; }
+  .navbar .user-login {
+    border-radius: 5px;
+    background-color: #343434;
+    width: 14rem;
+    margin-left: -7rem;
+    left: 50%;
+    top: 10rem;
+    padding: 1rem 1rem 1.5rem 1rem; }
+    .navbar .user-login table {
+      margin: auto;
+      width: 100%;
+      border-collapse: collapse; }
+      .navbar .user-login table #user_email {
+        padding: 0.5rem;
+        border: 0 1px 1px 1px solid lightgray; }
+      .navbar .user-login table #user_password {
+        margin-top: 0;
+        height: 100%;
+        padding: 0.5rem;
+        border: 1px solid lightgray; }
+      .navbar .user-login table td {
+        margin: 0;
+        display: block;
+        padding: 0; }
+        .navbar .user-login table td button {
+          padding: 0.5rem;
+          width: 100%;
+          cursor: pointer; } }
+@media only screen and (max-device-width: 635px) {
+  .navbar {
+    padding: 5rem; }
+    .navbar #sign-out {
+      font-size: 2rem; }
+    .navbar #front-title {
+      margin-left: 50%;
+      position: absolute;
+      left: -14rem;
+      font-size: 7rem;
+      top: 2rem; }
+    .navbar #back-title {
+      margin-left: 50%;
+      left: 0.8rem;
+      top: 3rem;
+      position: absolute;
+      font-size: 5rem; }
+    .navbar .user-login {
+      border-radius: 5px;
+      background-color: #343434;
+      width: 50rem;
+      margin-left: -25rem;
+      left: 50%;
+      top: 15rem;
+      padding: 4rem 4rem 4.5rem 4rem;
+      font-size: 3rem;
+      border-radius: 20px; }
+      .navbar .user-login table {
+        margin: auto;
+        width: 100%;
+        border-collapse: collapse; }
+        .navbar .user-login table input {
+          padding: 2rem 1rem; }
+        .navbar .user-login table #user_email {
+          border: 0 1px 1px 1px solid lightgray; }
+        .navbar .user-login table #user_password {
+          margin-top: 0;
+          height: 100%;
+          border: 1px solid lightgray; }
+        .navbar .user-login table input[type=checkbox] {
+          -ms-transform: scale(2);
+          -moz-transform: scale(2);
+          -webkit-transform: scale(2);
+          -o-transform: scale(2); }
+        .navbar .user-login table td {
+          margin: 0;
+          display: block;
+          padding: 0; }
+          .navbar .user-login table td #user_remember_me {
+            margin: 1rem; }
+          .navbar .user-login table td button {
+            font-size: 3rem;
+            padding: 2rem;
+            width: 100%;
+            cursor: pointer; }
+    .navbar .signup-container {
+      width: 50rem;
+      padding: 4rem 4rem;
+      left: -25rem;
+      margin-left: 50%;
+      margin-top: 10rem;
+      visibility: hidden;
+      border-radius: 20px;
+      font-size: 3rem; }
+      .navbar .signup-container h1 {
+        padding-bottom: 2rem;
+        font-size: 3rem; }
+      .navbar .signup-container input {
+        font-size: 2rem;
+        width: 100%;
+        padding: 2rem; }
+      .navbar .signup-container #signup-btn {
+        padding: 2rem 0; } }

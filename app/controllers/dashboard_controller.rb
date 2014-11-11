@@ -2,6 +2,9 @@ class DashboardController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+    if current_user.desk_type
+      @desk = current_user.desk_type
+    end
   end
 
   def show
@@ -13,12 +16,10 @@ class DashboardController < ApplicationController
   end
 
   def update
-    p current_user
     @desk = params[:desk]
     current_user.desk_type = @desk
     current_user.save
-    p '------------------'
-    render :selected
+    render :selected, layout: false
   end
 
 

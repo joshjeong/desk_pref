@@ -1,10 +1,24 @@
-$break-small: 740px;
-$break-large: 1200px;
-$small-displays: "screen and (max-width: 1000px)";
+$small-displays: "screen and (max-width: 600px)";
+
+#choose-title{
+  font-family: 'Open Sans', sans-serif;
+  top: 6rem;
+  font-size: 1.5rem;
+  position: relative;
+  text-align: center;
+  transition: font-size 0.5s;
+  padding: 1rem 0 1rem 0;
+  #desk-pref{
+    color:#0084b4;
+  }
+}
+
+#sign-out{
+  font-size: 1rem;
+}
 
 .dimOverlay{
   visibility: hidden;
-  border: 1px solid red;
   background-color: rgba(0,0,0,0.8);
   position: absolute;
   height: 100%;
@@ -12,35 +26,58 @@ $small-displays: "screen and (max-width: 1000px)";
   z-index: 2;
 }
 .description-container{
+  font-family: 'Open Sans', sans-serif;
   height: 10rem;
-  width: 40%;
+  width: 18rem;
   position: relative;
-  top: 5rem;
   margin:auto;
   z-index: 2;
   background-color: white;
   visibility: hidden;
+  border-radius: 5px;
+  background-color: white;-webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,1);
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,1);
+  .description-text{
+    padding-bottom: 3rem;
+  }
   h1{
     text-align: center;
     padding-top: 1rem;
     font-size: 2rem;
+    text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+    color: #0084b4;
   }
   ul{
-    text-align: center;
+    padding-top: 5px;
+    text-align: left;
+    width: 14rem;
+    margin: auto;
   }
-  #select-btn{
+  button{
     position: absolute;
     bottom: 1rem;
-    width: 10rem;
-    margin-left: -5rem;
-    left: 50%;
+    width: 5rem;
+    color: white;
+    border: none;
+    background-color: #0084b4;-webkit-box-shadow: 2px 2px 2px 0px rgba(74,105,120,1);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(74,105,120,1);
+    box-shadow: 2px 2px 2px 0px rgba(74,105,120,1);
+  }
+  #select-btn{
+    left: 15%;
+  }
+  #cancel-btn{
+    right: 15%;
+
   }
 }
 .desk-container{
-  top: -8rem;
+  top: -4rem;
   margin: auto;
   height: 24rem;
   width: 90%;
+  max-width: 70rem;
   position: relative;
   #basic{
     left: 0;
@@ -55,52 +92,63 @@ $small-displays: "screen and (max-width: 1000px)";
     background-image: url("/assets/mega.jpg");
   }
   .desk-pic{
+    background-position: center;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
     background-size: 100%;
     background-repeat: no-repeat;
     position: absolute;
-    display: inline-block;
     height: 100%;
     width: 33%;
     overflow: hidden;
-  }
-  li{
-    display: block;
-    position: absolute;
-    overflow: hidden;
-  }
-  .overlay{
-    cursor: pointer;
-    top: 0;
-    position: absolute;
-    display: inline-block;
-    display: none;
-    background: rgba(0,0,0,0.7);
-    width: 100%;
-    height: 100%;
-    h1{
-      line-height: 24rem;
-      vertical-align: center;
-      color: white;
-      text-align: center;
-      font-size: 3rem;
+    .overlay{
+      cursor: pointer;
+      position: absolute;
+      display: inline-block;
+      display: none;
+      background: rgba(0,0,0,0.8);
+      width: 100%;
+      height: 100%;
+      h1{
+        font-family: 'Open Sans', sans-serif;
+        line-height: 24rem;
+        vertical-align: center;
+        color: white;
+        text-align: center;
+        font-size: 3rem;
+      }
     }
   }
-  @media #{$small-displays} {
+  li{
+    overflow: hidden;
+  }
+}
+@media #{$small-displays} {
+  #choose-title{
+    font-size: 1rem;
+  }
+  .desk-container{
     .desk-pic{
-      display: block;
-      width: 100%;
-      height: 33%;
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
       position: relative;
-      img{
-        width:100%;
-        height: auto;
+      height: 10rem;
+      width: 100%;
+      overflow: hidden;
+      .overlay{
+        h1{
+          line-height: 10rem;
+        }
       }
     }
     #standing{
       left: 0;
     }
+  }
+  .description-container{
+    top: 3rem;
   }
 }
