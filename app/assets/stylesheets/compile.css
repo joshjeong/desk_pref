@@ -78,11 +78,12 @@ table {
   visibility: hidden;
   position: absolute;
   left: 0;
-  width: 38rem;
-  height: 30rem;
-  left: -19rem;
+  width: 36rem;
+  height: 27rem;
+  left: -18rem;
   margin-left: 50%;
-  background-color: white; }
+  background-color: white;
+  padding: 1rem; }
   .description-container .modal-container {
     position: relative;
     width: 100%;
@@ -109,7 +110,7 @@ table {
       color: #0084b4;
       text-align: center; }
     .description-container .modal-container ul {
-      padding: 0 1rem; }
+      padding: 0 0 0 1rem; }
       .description-container .modal-container ul li {
         padding: 0.2rem 0; }
     .description-container .modal-container button {
@@ -117,7 +118,7 @@ table {
       color: white;
       border: none;
       position: absolute;
-      bottom: 11rem;
+      bottom: 8rem;
       width: 6rem;
       height: 2rem;
       font-size: 1rem;
@@ -126,9 +127,9 @@ table {
       -moz-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75);
       box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75); }
     .description-container .modal-container #select-btn {
-      left: 12%; }
+      left: 10%; }
     .description-container .modal-container #cancel-btn {
-      right: 12%; }
+      right: 10%; }
 
 .desk-container {
   top: 6rem;
@@ -178,6 +179,31 @@ table {
 @media screen and (max-width: 600px) {
   #choose-title {
     font-size: 1rem; }
+
+  .description-container {
+    padding: 1rem;
+    width: 22rem;
+    left: -11rem;
+    margin-left: 50%;
+    height: 23rem; }
+    .description-container .modal-container .modal-pic {
+      width: 40%; }
+    .description-container .modal-container .modal-content {
+      width: 60%; }
+      .description-container .modal-container .modal-content .description-text h1 {
+        font-size: 1.6rem; }
+      .description-container .modal-container .modal-content .description-text ul {
+        font-size: 1rem; }
+      .description-container .modal-container .modal-content #select-btn {
+        left: -3rem;
+        margin-left: 50%;
+        bottom: 5rem;
+        width: 7rem; }
+      .description-container .modal-container .modal-content #cancel-btn {
+        left: -3rem;
+        margin-left: 50%;
+        bottom: 2rem;
+        width: 7rem; }
 
   .desk-container .desk-pic {
     -webkit-background-size: contain;
@@ -287,7 +313,8 @@ table {
     border: 1px solid lightgray;
     padding: 0.4rem; }
   .signup-container #signup-btn {
-    padding: 0.5rem 0; }
+    padding: 0.5rem 0;
+    cursor: pointer; }
 
 @media screen and (max-width: 635px) {
   .navbar #front-title {
