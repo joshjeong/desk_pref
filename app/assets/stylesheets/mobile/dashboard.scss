@@ -1,0 +1,55 @@
+$iphone: "only screen and (max-device-width: 635px)";
+
+@media #{$iphone} {
+  #choose-title{
+    font-size: 2rem;
+    top: 12rem;
+  }
+  .desk-container{
+    .desk-pic{
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
+      position: relative;
+      height: 25rem;
+      width: 100%;
+      overflow: hidden;
+      .overlay{
+        h1{
+          line-height: 10rem;
+        }
+      }
+    }
+    #standing{
+      left: 0;
+    }
+  }
+  .description-container{
+    height: 20rem;
+    width: 30rem;
+    top: 15rem;
+    padding: 2rem;
+    .description-text{
+      font-size: 2rem;
+      padding: 0;
+    }
+    h1{
+      font-size: 3rem;
+      color: #0084b4;
+    }
+    ul{
+      width: 25rem;
+    }
+    button{
+      height: 3rem;
+      font-size: 2rem;
+      width: 9rem;
+    }
+    #select-btn{
+    }
+    #cancel-btn{
+
+    }
+  }
+}
