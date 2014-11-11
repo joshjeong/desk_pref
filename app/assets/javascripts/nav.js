@@ -43,12 +43,14 @@ Nav.View.prototype = {
     $('.signup-container').css('visibility', 'visible');
   },
   hideSignIn: function(){
+    $('.user-login table').css('visibility', 'hidden');
     $('.user-login').css('visibility', 'hidden');
   },
   hideSignUp: function(){
     $('.signup-container').css('visibility', 'hidden');
   },
   showSignIn: function(){
+    $('.user-login table').css('visibility', 'visible');
     $('.user-login').css('visibility', 'visible');
   }
 

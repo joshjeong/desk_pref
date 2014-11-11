@@ -113,11 +113,13 @@ Desk.View.prototype = {
   },
   closeModal: function(){
     $('.description-container').css('visibility', 'hidden')
+    $('.modal-content').css('visibility', 'hidden')
     $('.dimOverlay').css('visibility', 'hidden')
     $('.modal-pic').css('background-image', 'none')
   },
   showModal: function(){
     $('.description-container').css('visibility', 'visible')
+    $('.modal-content').css('visibility', 'visible')
     $('.dimOverlay').css('visibility', 'visible')
   },
   changePrefTitle: function(pref){
