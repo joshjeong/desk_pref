@@ -428,6 +428,7 @@ table {
       .navbar .signup-container #signup-btn {
         padding: 2rem 0; } }
 .data-container {
+  visibility: hidden;
   position: relative;
   margin-top: -16rem;
   width: 100%;
@@ -475,6 +476,23 @@ table {
       left: -13rem;
       margin-left: 50%;
       position: relative; }
+      .data-container .chart-container .bar-container .bar-details {
+        visibility: hidden;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 1rem;
+        position: absolute;
+        left: -11rem;
+        margin-left: 50%;
+        width: 22rem;
+        top: 2rem; }
+        .data-container .chart-container .bar-container .bar-details table .table-labels {
+          color: #0084b4; }
+        .data-container .chart-container .bar-container .bar-details table .table-values {
+          text-align: center;
+          width: 11rem; }
+        .data-container .chart-container .bar-container .bar-details table tr td {
+          padding: 0.4rem 0;
+          border-bottom: 1px solid lightgray; }
     .data-container .chart-container .bars {
       position: absolute;
       bottom: 0;
@@ -508,7 +526,7 @@ table {
     padding: 0 0.5rem; }
 
 .users-container {
-  visibility: hidden;
+  visibility: visible;
   position: relative;
   top: 7rem;
   width: 90%;
@@ -541,3 +559,21 @@ table {
         background-image: url("/assets/toggle-on.png"); }
       .users-container table td .admin-false {
         background-image: url("/assets/toggle-off.png"); }
+
+@media only screen and (max-device-width: 635px) {
+  .navbar #admin-sign-out {
+    font-size: 1.5rem; }
+  .navbar .admin-nav {
+    left: -7rem; }
+    .navbar .admin-nav h1 {
+      font-size: 2rem; }
+
+  .users-container {
+    top: 16rem;
+    width: 40rem;
+    font-size: 2rem;
+    min-width: 50rem; }
+    .users-container table thead tr th {
+      font-size: 2rem; }
+    .users-container table tr td {
+      height: 5rem; } }

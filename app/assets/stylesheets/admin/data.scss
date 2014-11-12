@@ -1,4 +1,5 @@
 .data-container{
+  visibility: hidden;
   position: relative;
   margin-top: -16rem;
   width: 100%;
@@ -54,6 +55,31 @@
       left: -13rem;
       margin-left: 50%;
       position: relative;
+      .bar-details{
+        visibility: hidden;
+        background-color: rgba(255,255,255,0.8);
+        padding: 1rem;
+        position: absolute;
+        left: -11rem;
+        margin-left: 50%;
+        width: 22rem;
+        top: 2rem;
+        table{
+          .table-labels{
+            color: #0084b4;
+          }
+          .table-values{
+            text-align: center;
+            width: 11rem;
+          }
+          tr{
+            td{
+              padding: 0.4rem 0;
+              border-bottom: 1px solid lightgray;
+            }
+          }
+        }
+      }
     }
     .bars{
       position: absolute;
