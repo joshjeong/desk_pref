@@ -444,6 +444,7 @@ table {
     padding: 0 0.5rem; }
 
 .users-container {
+  visibility: hidden;
   position: relative;
   top: 7rem;
   width: 30rem;
@@ -452,14 +453,14 @@ table {
     padding: 0 2rem; }
   .users-container table td {
     height: 2rem; }
-    .users-container table td #admin-true {
+    .users-container table td .admin-true {
       background-image: url("/assets/toggle-on.png");
       background-size: contain;
       background-repeat: no-repeat;
       height: 100%;
       width: 100%;
       display: block; }
-    .users-container table td #admin-false {
+    .users-container table td .admin-false {
       background-image: url("/assets/toggle-off.png");
       background-size: contain;
       background-repeat: no-repeat;
