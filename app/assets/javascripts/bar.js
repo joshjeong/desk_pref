@@ -27,6 +27,7 @@ Bar.Controller.prototype = {
   },
   hoverOn: function(bar){
     this.view.showShadow(bar);
+    this.view.showDetails();
     var desk = bar.attr('id').split('-')[1],
         self = this;
     $.ajax({
@@ -46,7 +47,8 @@ Bar.Controller.prototype = {
     })
   },
   hoverOut: function(bar){
-    this.view.hideShadow(bar)
+    this.view.hideShadow(bar);
+    this.view.hideDetails();
   },
   dataTab: function(){
     var self = this;
@@ -95,5 +97,11 @@ Bar.View.prototype = {
     $('#all-users').html(data.allUsers)
     $('#percentage').html(data.percentage + ' ('+data.deskUsers + ' Employees)')
     $('#total-cost').html('$'+ data.price*data.allUsers)
+  },
+  showDetails: function(){
+    $('.bar-details').css('visibility', 'visible');
+  },
+  hideDetails: function(){
+    $('.bar-details').css('visibility', 'hidden');
   }
 }
