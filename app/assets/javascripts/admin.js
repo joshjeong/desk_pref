@@ -1,13 +1,13 @@
 $(document).ready(function(){
-  var bController = new Bar.Controller(Bar.View)
-  var aController = new Admin.Controller(Admin.View, bController);
+  var cController = new Chart.Controller(Chart.View)
+  var aController = new Admin.Controller(Admin.View, cController);
   aController.bindListeners();
-  bController.bindListeners();
+  cController.bindListeners();
 });
 
-Admin.Controller = function(view, bController){
+Admin.Controller = function(view, cController){
   this.view = new view;
-  this.bController = bController;
+  this.cController = cController;
 };
 
 Admin.Controller.prototype = {
@@ -44,10 +44,10 @@ Admin.Controller.prototype = {
   dataTab: function(){
     var self = this;
     this.view.hideUsersTab();
-    this.bController.showDataTab();
+    this.cController.showDataTab();
   },
   usersTab: function(){
-    this.bController.hideDataTab();
+    this.cController.hideDataTab();
     this.view.showUsersTab();
   },
   toggleOn: function(button){

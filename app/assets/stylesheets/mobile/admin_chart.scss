@@ -1,0 +1,64 @@
+$iphone: "only screen and (max-device-width: 635px)";
+
+@media #{$iphone} {
+  .data-container{
+    #chart-title{
+      font-size: 3rem;
+    }
+    .shadow{
+    }
+    .chart-container{
+      height: 43rem;
+      left: -23rem;
+      .y-axis-container{
+        left: -1rem;
+        .percent{
+          font-size: 2rem;
+        }
+      }
+      .x-axis-container{
+        width: 40rem;
+        font-size: 2rem;
+        .desk-type{
+        }
+      }
+      .bar-container{
+          height: 40rem;
+          width: 40rem;
+        .bar-details{
+          width: 38rem;
+          left: -19rem;
+          table{
+            .table-labels{
+              font-size: 2rem;
+              width: 20rem;
+            }
+            .table-values{
+              font-size: 2rem;
+              width: 21rem;
+            }
+            tr{
+              td{
+              }
+            }
+          }
+        }
+      }
+      .bars{
+        width: 10rem;
+      }
+      #bar-basic{
+      }
+      #bar-standing{
+        left: -5rem;
+      }
+      #bar-mega{
+      }
+    }
+  }
+
+
+
+
+
+}

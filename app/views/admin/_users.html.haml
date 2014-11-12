@@ -2,10 +2,10 @@
   %table
     %thead
       %tr
-        %th Email Username
+        %th Email Addresses
         %th Admin Setting
     %tbody
-      - @users_list.each do |user, admin|
+      - @users_list.sort.each do |user, admin|
         %tr
           %td.user-column
             = user

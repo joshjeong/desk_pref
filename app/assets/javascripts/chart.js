@@ -1,16 +1,13 @@
-$(document).ready(function(){
-});
-
-Bar.Controller = function(view){
+Chart.Controller = function(view){
   this.view = new view;
 }
 
-Bar.Controller.prototype = {
+Chart.Controller.prototype = {
   bindListeners: function(){
     this.dataTabListener();
-    this.hoverBarListener();
+    this.hoverChartListener();
   },
-  hoverBarListener: function(){
+  hoverChartListener: function(){
     var self = this;
     $('.bar-container').on('mouseenter', '.bars', function(){
       self.hoverOn($(this));
@@ -27,9 +24,28 @@ Bar.Controller.prototype = {
   },
   hoverOn: function(bar){
     this.view.showShadow(bar);
+    this.view.showDetails();
+    var desk = bar.attr('id').split('-')[1],
+        self = this;
+    $.ajax({
+      url: '/admin/hover',
+      type: 'GET',
+      data: {desk: desk}
+    }).done(function(response){
+        var details = { 
+              price: response.price,
+              allUsers: response.allUsers,
+              deskUsers: response.deskUsers,
+              percentage: response.percentage
+        }
+
+        self.view.updateDetails(details)
+
+    })
   },
   hoverOut: function(bar){
-    this.view.hideShadow(bar)
+    this.view.hideShadow(bar);
+    this.view.hideDetails();
   },
   dataTab: function(){
     var self = this;
@@ -55,9 +71,9 @@ Bar.Controller.prototype = {
 }
 
 
-Bar.View = function(){}
+Chart.View = function(){}
 
-Bar.View.prototype = {
+Chart.View.prototype = {
   hideData: function(){
     $('.data-container').css('visibility', 'hidden')
   },
@@ -72,7 +88,17 @@ Bar.View.prototype = {
   },
   hideShadow: function(bar){
     bar.removeClass('shadow')
+  },
+  updateDetails: function(data){
+    $('#price').html('$'+ data.price)
+    $('#all-users').html(data.allUsers)
+    $('#percentage').html(data.percentage + ' ('+data.deskUsers + ' Employees)')
+    $('#total-cost').html('$'+ data.price*data.allUsers)
+  },
+  showDetails: function(){
+    $('.bar-details').css('visibility', 'visible');
+  },
+  hideDetails: function(){
+    $('.bar-details').css('visibility', 'hidden');
   }
-
-
 }
