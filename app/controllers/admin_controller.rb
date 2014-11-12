@@ -26,4 +26,7 @@ class AdminController < ApplicationController
     end
   end
 
+  def hover
+  end
+
 end
