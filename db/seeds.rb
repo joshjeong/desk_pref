@@ -9,3 +9,10 @@
 Desk.create(style: "basic", price: 50, description: "Perfect for coloring spreadsheets, Easy to assemble, 35.63 x 23.5 x 24")
 Desk.create(style: "standing", price: 300, description: "No more being hunched over, Adjustable height, 59 x 28.5 x 33.5-45.25")
 Desk.create(style: "mega", price: 2000, description: "Large touchscreen for debugging, For Developers only, 60 x 30 x 30")
+
+User.create(email: "admin@email.com", password: "password", password_confirmation: "password", admin: true)
+User.create(email: "skywalker@email.com", password: "password", password_confirmation: "password", admin: false)
+User.create(email: "davyjones@email.com", password: "password", password_confirmation: "password", admin: false)
+User.create(email: "derrekcarr@email.com", password: "password", password_confirmation: "password", admin: true)
+User.create(email: "eminem@email.com", password: "password", password_confirmation: "password", admin: false)
+User.create(email: "thegreatgambino@email.com", password: "password", password_confirmation: "password", admin: false)
