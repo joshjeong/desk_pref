@@ -15,6 +15,7 @@ Admin.Controller.prototype = {
     this.usersTabListener();
     this.toggleOnListener();
     this.toggleOffListener();
+    this.dataTabListener();
   },
   usersTabListener: function(){
     var self = this;
@@ -22,6 +23,12 @@ Admin.Controller.prototype = {
       self.usersTab();
     })
   }, 
+  dataTabListener: function(){
+    var self = this;
+    $('#data-nav').on('click', function(){
+      self.dataTab();
+    })
+  },
   toggleOnListener: function(){
     var self = this;
     $('.admin-setting-column').on('click', '.admin-false', function(){
