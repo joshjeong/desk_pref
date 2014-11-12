@@ -506,23 +506,33 @@ table {
   visibility: hidden;
   position: relative;
   top: 7rem;
-  width: 30rem;
+  width: 90%;
+  min-width: 23rem;
+  max-width: 37rem;
   margin: auto; }
-  .users-container table .user-column {
-    padding: 0 2rem; }
-  .users-container table td {
-    height: 2rem; }
-    .users-container table td .admin-true {
-      background-image: url("/assets/toggle-on.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      height: 100%;
-      width: 100%;
-      display: block; }
-    .users-container table td .admin-false {
-      background-image: url("/assets/toggle-off.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      height: 100%;
-      width: 100%;
-      display: block; }
+  .users-container table {
+    border: 1px solid lightgray;
+    width: 100%; }
+    .users-container table thead {
+      background-color: #c0deed; }
+      .users-container table thead tr th {
+        padding: 1rem 1rem;
+        font-size: 1.2rem; }
+    .users-container table .user-column {
+      padding: 0 2rem; }
+    .users-container table td {
+      border-top: 1px solid lightgray;
+      vertical-align: middle;
+      height: 3rem; }
+      .users-container table td .toggle-btn {
+        padding: 0.3rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+        display: block; }
+      .users-container table td .admin-true {
+        background-image: url("/assets/toggle-on.png"); }
+      .users-container table td .admin-false {
+        background-image: url("/assets/toggle-off.png"); }

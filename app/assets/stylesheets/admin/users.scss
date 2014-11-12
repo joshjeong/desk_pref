@@ -23,9 +23,23 @@
   visibility: hidden;
   position: relative;
   top: 7rem;
-  width:30rem;
+  width:90%;
+  min-width: 23rem;
+  max-width: 37rem;
+
   margin: auto;
   table{
+    border: 1px solid lightgray;
+    width: 100%;
+    thead{
+      background-color: #c0deed;
+      tr{
+        th{
+          padding: 1rem 1rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
     th{
 
     } 
@@ -33,24 +47,24 @@
       padding: 0 2rem;
     }
     td{
-      // padding: 0.5rem;
-      height: 2rem;
-      // width:7rem;
-      .admin-true{
-        background-image: url('/assets/toggle-on.png');
+      border-top: 1px solid lightgray;
+      vertical-align: middle;
+      height: 3rem;
+      .toggle-btn{
+        padding: 0.3rem;
         background-size: contain;
         background-repeat: no-repeat;
+        background-position: center;
         height: 100%;
         width: 100%;
-        display: block;
+        display: block;        
+      }
+      .admin-true{
+        background-image: url('/assets/toggle-on.png');
+
       }
       .admin-false{
         background-image: url('/assets/toggle-off.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 100%;
-        width: 100%;
-        display: block;
       }
     }  
   }
