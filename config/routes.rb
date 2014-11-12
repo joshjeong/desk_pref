@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :admin do
     collection do
       get 'stats'
+      get 'hover'
     end
   end
 

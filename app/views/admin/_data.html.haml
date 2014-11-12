@@ -15,7 +15,23 @@
       - @desks.each do |desk|
         %div.bars{:id => "bar-#{desk.style}"}
   %div.bar-details
-    
-    %h1 Total cost of switching all employees to this desk pref: 
-    %h1 Percentage of employees: 
-    %h1 Number of employees:
+    %table
+      %tr
+        %td
+          Percentage
+        %td#percentage
+      %tr
+        %td
+          Cost of Desk
+        %td#price
+      %tr
+        %td
+          Total # of Employees
+        %td#all-users
+      %tr
+        %td
+          Total Cost
+        %td#total-cost
+      %tr
+        %td
+        %td
