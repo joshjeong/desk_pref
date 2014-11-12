@@ -39,8 +39,20 @@ Admin.Controller.prototype = {
     })
   },
   dataTab: function(){
+    var self = this;
     this.view.hideUsersTab();
     this.view.showDataTab();
+    $.ajax({
+      url: '/admin/stats',
+      type: 'GET'
+    }).done(function(response){
+      basic = response.basic
+      standing = response.standing
+      mega = response.mega
+      self.view.changeGraph("basic",basic)
+      self.view.changeGraph("standing",standing)
+      self.view.changeGraph("mega",mega)
+    })
   },
   usersTab: function(){
     this.view.hideDataTab();
@@ -95,5 +107,8 @@ Admin.View.prototype = {
   },
   showUsersTab: function(){
     $('.users-container').css('visibility', 'visible')
+  },
+  changeGraph: function(desk, value){
+    $('#bar-'+desk).css('height', value+'%')
   }
 }
