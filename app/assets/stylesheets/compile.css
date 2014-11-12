@@ -427,3 +427,42 @@ table {
         padding: 2rem; }
       .navbar .signup-container #signup-btn {
         padding: 2rem 0; } }
+.navbar #admin-sign-out {
+  padding: 0.5rem 1rem;
+  position: absolute;
+  top: 0;
+  right: 0; }
+.navbar .admin-nav {
+  bottom: 0.2rem;
+  position: absolute;
+  left: -4rem;
+  margin-left: 50%;
+  text-align: center; }
+  .navbar .admin-nav h1 {
+    font-size: 1rem;
+    display: inline-block;
+    padding: 0 0.5rem; }
+
+.users-container {
+  position: relative;
+  top: 7rem;
+  width: 30rem;
+  margin: auto; }
+  .users-container table .user-column {
+    padding: 0 2rem; }
+  .users-container table td {
+    height: 2rem; }
+    .users-container table td #admin-true {
+      background-image: url("/assets/toggle-on.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 100%;
+      display: block; }
+    .users-container table td #admin-false {
+      background-image: url("/assets/toggle-off.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 100%;
+      display: block; }
