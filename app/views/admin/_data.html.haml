@@ -12,26 +12,24 @@
           = desk.style.capitalize
       %div
     %div.bar-container.shadow
+      %div.bar-details
+        %table
+          %tr
+            %td.table-labels
+              Percentage
+            %td#percentage.table-values 
+          %tr
+            %td.table-labels
+              Cost of Desk
+            %td#price.table-values
+          %tr
+            %td.table-labels
+              Total # of Employees
+            %td#all-users.table-values
+          %tr
+            %td.table-labels
+              Total Cost
+            %td#total-cost.table-values
       - @desks.each do |desk|
         %div.bars{:id => "bar-#{desk.style}"}
-  %div.bar-details
-    %table
-      %tr
-        %td
-          Percentage
-        %td#percentage
-      %tr
-        %td
-          Cost of Desk
-        %td#price
-      %tr
-        %td
-          Total # of Employees
-        %td#all-users
-      %tr
-        %td
-          Total Cost
-        %td#total-cost
-      %tr
-        %td
-        %td
+
