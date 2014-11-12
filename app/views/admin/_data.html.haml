@@ -1,9 +1,16 @@
-%div.chart-container
-  %table
-    %tbody
-      %tr
-        %td
-          visual
-      %tr
-        %td
-          name
+%div.data-container
+  %h1 Chart
+  %div.chart-container
+    %div.y-axis-container
+      - y_axis= ["100", "75", "50", "25", "0"]
+      - y_axis.each do |percent|
+        %div.percent
+          = percent+"%"
+    %div.x-axis-container
+      - @desks.each do |desk|
+        %div.desk-type
+          = desk.style.capitalize
+      %div
+    %div.bar-container.shadow
+      - @desks.each do |desk|
+        %div.bars{:id => "bar-#{desk.style}"}
