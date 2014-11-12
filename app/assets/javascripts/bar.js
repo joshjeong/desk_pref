@@ -27,6 +27,23 @@ Bar.Controller.prototype = {
   },
   hoverOn: function(bar){
     this.view.showShadow(bar);
+    var desk = bar.attr('id').split('-')[1],
+        self = this;
+    $.ajax({
+      url: '/admin/hover',
+      type: 'GET',
+      data: {desk: desk}
+    }).done(function(response){
+        var details = { 
+              price: response.price,
+              allUsers: response.allUsers,
+              deskUsers: response.deskUsers,
+              percentage: response.percentage
+        }
+
+        self.view.updateDetails(details)
+
+    })
   },
   hoverOut: function(bar){
     this.view.hideShadow(bar)
@@ -72,7 +89,11 @@ Bar.View.prototype = {
   },
   hideShadow: function(bar){
     bar.removeClass('shadow')
+  },
+  updateDetails: function(data){
+    $('#price').html('$'+ data.price)
+    $('#all-users').html(data.allUsers)
+    $('#percentage').html(data.percentage + ' ('+data.deskUsers + ' Employees)')
+    $('#total-cost').html('$'+ data.price*data.allUsers)
   }
-
-
 }
