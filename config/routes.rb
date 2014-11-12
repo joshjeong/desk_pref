@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :home, only: :index 
   resources :dashboard
+  resources :admin
   root 'home#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
