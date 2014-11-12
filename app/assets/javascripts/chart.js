@@ -1,16 +1,13 @@
-$(document).ready(function(){
-});
-
-Bar.Controller = function(view){
+Chart.Controller = function(view){
   this.view = new view;
 }
 
-Bar.Controller.prototype = {
+Chart.Controller.prototype = {
   bindListeners: function(){
     this.dataTabListener();
-    this.hoverBarListener();
+    this.hoverChartListener();
   },
-  hoverBarListener: function(){
+  hoverChartListener: function(){
     var self = this;
     $('.bar-container').on('mouseenter', '.bars', function(){
       self.hoverOn($(this));
@@ -74,9 +71,9 @@ Bar.Controller.prototype = {
 }
 
 
-Bar.View = function(){}
+Chart.View = function(){}
 
-Bar.View.prototype = {
+Chart.View.prototype = {
   hideData: function(){
     $('.data-container').css('visibility', 'hidden')
   },
