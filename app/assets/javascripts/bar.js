@@ -38,9 +38,9 @@ Bar.Controller.prototype = {
       url: '/admin/stats',
       type: 'GET'
     }).done(function(response){
-      basic = response.basic
-      standing = response.standing
-      mega = response.mega
+      basic = response.BASIC
+      standing = response.STANDING
+      mega = response.MEGA
       self.view.changeGraph("basic",basic)
       self.view.changeGraph("standing",standing)
       self.view.changeGraph("mega",mega)
