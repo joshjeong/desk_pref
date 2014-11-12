@@ -39,7 +39,6 @@ class AdminController < ApplicationController
       price: desk_price,
       allUsers: all_users,
       deskUsers: desk_users,
-      count: count,
       percentage: percentage      
     }
     respond_to do |format|
