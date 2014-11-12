@@ -1,24 +1,20 @@
 $(document).ready(function(){
-  var aController = new Admin.Controller(Admin.View);
+  var bController = new Bar.Controller(Bar.View)
+  var aController = new Admin.Controller(Admin.View, bController);
   aController.bindListeners();
+  bController.bindListeners();
 });
 
-Admin.Controller = function(view){
+Admin.Controller = function(view, bController){
   this.view = new view;
+  this.bController = bController;
 };
 
 Admin.Controller.prototype = {
   bindListeners: function(){
-    this.dataTabListener();
     this.usersTabListener();
     this.toggleOnListener();
     this.toggleOffListener();
-  },
-  dataTabListener: function(){
-    var self = this;
-    $('#data-nav').on('click', function(){
-      self.dataTab();
-    })
   },
   usersTabListener: function(){
     var self = this;
@@ -41,21 +37,10 @@ Admin.Controller.prototype = {
   dataTab: function(){
     var self = this;
     this.view.hideUsersTab();
-    this.view.showDataTab();
-    $.ajax({
-      url: '/admin/stats',
-      type: 'GET'
-    }).done(function(response){
-      basic = response.basic
-      standing = response.standing
-      mega = response.mega
-      self.view.changeGraph("basic",basic)
-      self.view.changeGraph("standing",standing)
-      self.view.changeGraph("mega",mega)
-    })
+    this.bController.showDataTab();
   },
   usersTab: function(){
-    this.view.hideDataTab();
+    this.bController.hideDataTab();
     this.view.showUsersTab();
   },
   toggleOn: function(button){
@@ -96,19 +81,10 @@ Admin.View.prototype = {
     button.removeClass('admin-true')
     button.addClass('admin-false')
   },
-  hideDataTab: function(){
-    $('.data-container').css('visibility', 'hidden')
-  },
-  showDataTab: function(){
-    $('.data-container').css('visibility', 'visible')
-  },
   hideUsersTab: function(){
     $('.users-container').css('visibility', 'hidden')
   },
   showUsersTab: function(){
     $('.users-container').css('visibility', 'visible')
-  },
-  changeGraph: function(desk, value){
-    $('#bar-'+desk).css('height', value+'%')
   }
 }
