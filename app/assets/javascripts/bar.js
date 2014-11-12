@@ -12,8 +12,11 @@ Bar.Controller.prototype = {
   },
   hoverBarListener: function(){
     var self = this;
-    $('.bar-container').on('mouseover', '.bars', function(){
-      self.hoverBar($(this));
+    $('.bar-container').on('mouseenter', '.bars', function(){
+      self.hoverOn($(this));
+    }),
+    $('.bar-container').on('mouseleave', '.bars', function(){
+      self.hoverOut($(this));
     })
   },
   dataTabListener: function(){
@@ -22,8 +25,11 @@ Bar.Controller.prototype = {
       self.dataTab();
     })
   },
-  hoverBar: function(bar){
-    console.log('barz')
+  hoverOn: function(bar){
+    this.view.showShadow(bar);
+  },
+  hoverOut: function(bar){
+    this.view.hideShadow(bar)
   },
   dataTab: function(){
     var self = this;
@@ -60,6 +66,13 @@ Bar.View.prototype = {
   },
   changeGraph: function(desk, value){
     $('#bar-'+desk).css('height', value+'%')
+  },
+  showShadow: function(bar){
+    bar.addClass('shadow')
+  },
+  hideShadow: function(bar){
+    bar.removeClass('shadow')
   }
+
 
 }
