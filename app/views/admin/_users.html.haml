@@ -1,0 +1,16 @@
+%div.users-container
+  %table
+    %thead
+      %tr
+        %th Email Username
+        %th Admin Setting
+    %tbody
+      - @users_list.each do |user, admin|
+        %tr
+          %td.user-column
+            = user
+          %td.admin-setting-column
+            - if admin
+              .admin-true.toggle-btn
+            - else
+              .admin-false.toggle-btn

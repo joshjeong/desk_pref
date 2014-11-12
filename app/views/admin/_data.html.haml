@@ -1,0 +1,21 @@
+%div.data-container
+  %h1#chart-title Employee Preference(%)
+  %div.chart-container
+    %div.y-axis-container
+      - y_axis= ["100", "75", "50", "25", "0"]
+      - y_axis.each do |percent|
+        %div.percent
+          = percent+"%"
+    %div.x-axis-container
+      - @desks.each do |desk|
+        %div.desk-type
+          = desk.style.capitalize
+      %div
+    %div.bar-container.shadow
+      - @desks.each do |desk|
+        %div.bars{:id => "bar-#{desk.style}"}
+  %div.bar-details
+    
+    %h1 Total cost of switching all employees to this desk pref: 
+    %h1 Percentage of employees: 
+    %h1 Number of employees:

@@ -1,0 +1,71 @@
+.navbar{
+  #admin-sign-out{
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .admin-nav{
+    bottom: 0.2rem;
+    position: absolute;
+    left: -4rem;
+    margin-left: 50%;
+    text-align: center;
+    h1{
+      font-size: 1rem;
+      display: inline-block;
+      padding: 0 0.5rem;
+    }
+  }
+}
+.users-container{
+  visibility: hidden;
+  position: relative;
+  top: 7rem;
+  width:90%;
+  min-width: 23rem;
+  max-width: 37rem;
+
+  margin: auto;
+  table{
+    border: 1px solid lightgray;
+    width: 100%;
+    thead{
+      background-color: #c0deed;
+      tr{
+        th{
+          padding: 1rem 1rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    th{
+
+    } 
+    .user-column{
+      padding: 0 2rem;
+    }
+    td{
+      border-top: 1px solid lightgray;
+      vertical-align: middle;
+      height: 3rem;
+      .toggle-btn{
+        padding: 0.3rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+        display: block;        
+      }
+      .admin-true{
+        background-image: url('/assets/toggle-on.png');
+
+      }
+      .admin-false{
+        background-image: url('/assets/toggle-off.png');
+      }
+    }  
+  }
+}

@@ -1,0 +1,78 @@
+.data-container{
+  position: relative;
+  margin-top: -16rem;
+  width: 100%;
+  height: 100%;
+  #chart-title{
+    font-size: 2rem;
+    color: #0084b4;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .shadow{
+    -webkit-box-shadow: 0px -1px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px -1px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px -1px 5px 0px rgba(50, 50, 50, 0.75);
+  }
+  .chart-container{
+    position: relative;  
+    height: 32rem;
+    width: 34rem;
+    left: -17rem;
+    padding: 0.2rem;
+    margin-left: 50%;
+    top: 1rem;
+    // border: 1px solid red;
+    .y-axis-container{
+      display: inline-block;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: 1rem;
+      .percent{
+        height: 23%;  
+      }
+    }
+    .x-axis-container{
+      width: 100%;
+      position: absolute;
+      bottom: 0.5rem;
+      left: -13rem;
+      margin-left: 50%;
+      width: 26rem;
+      text-align: center;
+      .desk-type{
+        display: inline-block;
+        // position: relative;
+        width: 32%;
+      }
+    }
+    .bar-container{
+      border: 1px solid #343434;
+      height: 30rem;
+      width: 26rem;
+      left: -13rem;
+      margin-left: 50%;
+      position: relative;
+    }
+    .bars{
+      position: absolute;
+      bottom: 0;
+      width: 6rem;
+      transition: height 1s;
+    }
+    #bar-basic{
+      background-color: #c0deed;
+      left: 1.4rem;
+    }
+    #bar-standing{
+      background-color: #3cf;
+      left: -2.5rem;
+      margin-left: 50%;
+    }
+    #bar-mega{
+      background-color: #0084b4;
+      right: 1.4rem;
+    }
+  }
+}
