@@ -26,7 +26,6 @@ $small-displays: "screen and (max-width: 635px)";
     padding: 0.2rem;
     margin-left: 50%;
     top: 1rem;
-    // border: 1px solid red;
     .y-axis-container{
       display: inline-block;
       position: absolute;
@@ -48,7 +47,6 @@ $small-displays: "screen and (max-width: 635px)";
       .desk-type{
         font-family: 'Open Sans', sans-serif;
         display: inline-block;
-        // position: relative;
         width: 32%;
       }
     }
